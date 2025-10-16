@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #fff5fa, #ffe6f2);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #ff4da6;
+}
+
+.logo span {
+  color: #ff80bf;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ff4da6;
+  font-weight: 600;
+}
+
+.about {
+  position: relative;
+  padding: 150px 8% 100px;
+  background: linear-gradient(135deg, #fff5fa, #ffe6f2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.intro-card, 
+.details, 
+.social-section, 
+.contact-cta {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.25);
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  margin: 25px 0;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-card:hover, 
+.details:hover, 
+.social-section:hover, 
+.contact-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+}
+
+.intro-card h1, 
+.details h2, 
+.social-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ff4da6;
+  margin-bottom: 15px;
+}
+
+.intro-card p, 
+.details p, 
+.details ul li, 
+.contact-cta p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ff4da6;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-section {
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: #ff4da6;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: scale(1.15);
+  color: #ff80bf;
+  filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.7));
+}
+
+.contact-cta {
+  text-align: center;
+}
+
+.contact-cta p {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.contact-cta .btn {
+  background-color: #ff4da6;
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(255, 77, 166, 0.4);
+  transition: all 0.3s ease;
+}
+
+.contact-cta .btn:hover {
+  background: linear-gradient(90deg, #ff5da2, #ffc8dd);
+  box-shadow: 0 0 15px #ffb6d9;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .intro-card, .details, .social-section, .contact-cta {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .intro-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-photo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.intro-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 50px 60px;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+  animation: floatCard 8s ease-in-out infinite;
+  text-align: left;
+}
+
+.about-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff4da6;
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.intro-text {
+  max-width: 500px;
+}
+
+.intro-text h1 {
+  font-family: 'Playfair Display', serif;
+  color: #ff4da6;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.details {
+  margin-top: 60px;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  padding: 40px 50px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.2);
+}
+
+.details h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ff66b2;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.details p,
+.details li {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.details ul {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.details li::before {
+  content: "• ";
+  color: #ff99cc;
+  font-weight: bold;
+}
+
+.contact-cta {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  background: #ff4da6;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 77, 166, 0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #ff5da2, #ffc8dd);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+}
+
+.floral {
+  position: absolute;
+  width: 180px;
+  opacity: 0.3;
+  animation: floatAlt 7s ease-in-out infinite;
+}
+
+.top-left { top: 0; left: 0; transform: rotate(-10deg); }
+.bottom-right { bottom: 0; right: 0; transform: rotate(15deg); }
+
+@keyframes floatAlt {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+  .intro-card {
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .about-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .intro-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .details {
+    padding: 30px 25px;
+  }
+}
+
